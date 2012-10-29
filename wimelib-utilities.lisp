@@ -58,3 +58,12 @@
        `(let (,,@(mapcar #'(lambda (g n) ``(,,g ,,n)) gensyms names))
 	  ,(let (,@(mapcar #'(lambda (n g) `(,n ,g)) names gensyms))
 		,@body)))))
+
+(defun ensure-list (x)
+  (if (listp x) x (list x)))
+
+(defun plist-alist (plist)
+  (collecting
+    (do ((tail plist (cddr tail)))
+	((endp tail))
+      (collect (list (car tail) (cadr tail))))))

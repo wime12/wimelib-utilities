@@ -8,5 +8,7 @@
 	   #:split-at
 	   #:split
 	   #:with-unique-names
-	   #:once-only))
+	   #:once-only
+	   #:ensure-list
+	   #:plist-alist))
 
